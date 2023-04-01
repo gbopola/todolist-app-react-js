@@ -6,28 +6,41 @@ import { EditTodoForm } from "./EditTodoForm";
 
 export const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
+  
+//   localstorage
+//    useEffect(() => {
+//         const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+//         setTodos(savedTodos);
+//     }, []);
 
-  const addTodo = (todo) =>
+  const addTodo = (todo) => {
     setTodos([
       ...todos,
       { id: uuidv4(), task: todo, completed: false, isEditing: false },
     ]);
+//     localstorage
+//     localStorage.setItem('todos', JSON.stringify(newTodos));
+  }
 
   const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
-  const toggleComplete = (id) =>
+  const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
+//     localstorage
+//      localStorage.setItem('todos', JSON.stringify(newTodos));
+  }
 
-  const editTodo = (id) =>
+  const editTodo = (id) => {
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
       )
     );
+  }
 
   const editTask = (task, id) => {
     setTodos(
@@ -35,6 +48,8 @@ export const TodoWrapper = () => {
         todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
       )
     );
+//     localstorage
+//     localStorage.setItem('todos', JSON.stringify(newTodos));
   };
 
   return (
