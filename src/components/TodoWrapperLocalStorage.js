@@ -5,7 +5,7 @@ import { Todo } from './Todo';
 import { EditTodoForm } from './EditTodoForm';
 uuidv4();
 
-export const TodoWrapper = () => {
+export const TodoWrapperLocalStorage = () => {
     const [todos, setTodos] = useState([])
 
     useEffect(() => {
