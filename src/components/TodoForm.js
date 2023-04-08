@@ -6,10 +6,12 @@ export const TodoForm = ({addTodo}) => {
     const handleSubmit = (e) => {
       // prevent default action
         e.preventDefault();
-        // add todo
-        addTodo(value);
-        // clear form after submission
-        setValue('');
+        if (value) {
+          // add todo
+          addTodo(value);
+          // clear form after submission
+          setValue('');
+        }
       };
   return (
     <form onSubmit={handleSubmit} className="TodoForm">
