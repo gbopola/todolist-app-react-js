@@ -56,7 +56,6 @@ h1 {
   border: none;
   padding: 0.55rem;
   cursor: pointer;
-  
 }
 
 .Todo {
@@ -68,15 +67,25 @@ h1 {
   padding: 0.75rem 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-  cursor: pointer;
 }
 
 .fa-trash {
   margin-left: 0.75rem;
 }
 
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
 .completed {
   color: #c5aeff;
   text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
 }
  
