@@ -33,6 +33,7 @@ h1 {
 
 .TodoForm {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .todo-input {
